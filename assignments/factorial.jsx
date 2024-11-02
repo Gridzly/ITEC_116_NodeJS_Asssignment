@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const port = 9090;
 
-// Function to check if a number is prime
+
 const isPrime = (num) => {
     if (num <= 1) return false;
     if (num <= 3) return true;
@@ -13,14 +13,13 @@ const isPrime = (num) => {
     return true;
 };
 
-// Function to calculate factorial
 const factorial = (num) => {
-    if (num < 0) return null; // Factorial is not defined for negative numbers
-    if (num === 0 || num === 1) return 1; // Base case
-    return num * factorial(num - 1); // Recursive case
+    if (num < 0) return null;
+    if (num === 0 || num === 1) return 1; 
+    return num * factorial(num - 1); 
 };
 
-// AssignmentController for prime checking
+
 app.get('/assignments/prime/:number', (req, res) => {
     const number = parseInt(req.params.number, 10);
     if (isNaN(number)) {
@@ -31,7 +30,7 @@ app.get('/assignments/prime/:number', (req, res) => {
     return res.json({ isPrime: result });
 });
 
-// AssignmentController for factorial calculation
+
 app.get('/assignments/factorial/:number', (req, res) => {
     const number = parseInt(req.params.number, 10);
     if (isNaN(number) || number < 0) {
