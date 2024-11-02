@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const port = 9090;
 
-// Function to check if a number is prime
+
 const isPrime = (num) => {
     if (num <= 1) return false;
     if (num <= 3) return true;
@@ -13,7 +13,7 @@ const isPrime = (num) => {
     return true;
 };
 
-// AssignmentController
+
 app.get('/assignments/prime/:number', (req, res) => {
     const number = parseInt(req.params.number, 10);
     if (isNaN(number)) {
